@@ -20,6 +20,8 @@ with app.app_context():
         {"name": "Restaurant 8", "address": "Address 8"},
         {"name": "Restaurant 9", "address": "Address 9"},
         {"name": "Restaurant 10", "address": "Address 10"},
+        {"name": "Restaurant 11",  "address": "Address 11"},
+        {"name": "Restaurant 12",  "address": "Address 12"}
       
     ]
 
