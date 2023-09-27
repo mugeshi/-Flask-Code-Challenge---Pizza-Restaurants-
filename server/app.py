@@ -1,4 +1,3 @@
-import os
 from flask import Flask, jsonify, request
 from models import db, Restaurant, Pizza, RestaurantPizza
 from flask_migrate import Migrate
@@ -6,11 +5,7 @@ from flask_swagger_ui import get_swaggerui_blueprint
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pizza_restaurants.db'
-#postgres://pizza_restaurant_db_user:OIu88FKAsdK5KKqM2NBGFpjIdjOp6vhF@dpg-ck9ss7ddrqvc738o1710-a.oregon-postgres.render.com/pizza_restaurant_db
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db.init_app(app)
-migrate = Migrate(app, db)
+
 
 SWAGGER_URL = '/api/docs'  # URL for exposing Swagger UI (without trailing '/')
 API_URL = '/static/swagger.json'  # Our API url (can of course be a local resource)
@@ -33,6 +28,14 @@ swaggerui_blueprint = get_swaggerui_blueprint(
 )
 
 app.register_blueprint(swaggerui_blueprint)
+
+
+
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pizza_restaurants.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db.init_app(app)
+migrate = Migrate(app, db)
 
 @app.route('/')
 def index():
