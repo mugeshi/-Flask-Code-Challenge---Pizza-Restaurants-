@@ -1,19 +1,19 @@
-Title: A Flask API for Pizza_Restaurants
+# Title: A Flask API for Pizza_Restaurants
 
-Author: Nicole Njeri
+## Author: Nicole Njeri
 
-Date: September 22, 2023
+### Date: September 22, 2023
 
-Introduction
+### Introduction
 Welcome to Pizza Fusion, a unique project that involves building a Flask API for managing Pizza Restaurants. In this assessment, we will delve into the world of pizza establishments and create a robust API that offers a range of functionalities described in the following sections.
 
-Project Overview
+### Project Overview
 In this project, we aim to create a Flask API that manages Pizza Restaurants and their associated pizzas. The core relationships in our database involve Restaurants having many Pizzas through a junction table called RestaurantPizza, and Pizzas having many Restaurants through the same junction table.
 
-Models and Migrations
+### Models and Migrations
 To get started, we'll need to create database models and migrations for the following tables:
 
-Restaurant
+### Restaurant
 
 id (Primary Key)
 name (String, max length 50, unique)
@@ -32,7 +32,7 @@ pizza_id (Foreign Key)
 Validations
 We will apply the following validations to our models:
 
-RestaurantPizza
+### RestaurantPizza
 
 Price must be between 1 and 30.
 Restaurant
@@ -131,23 +131,23 @@ SQLAlchemy
 Project Setup
 To get started with the project, follow these steps:
 
-Clone the repository: git clone <https://github.com/MartinNyaga/-Pizza-Restaurants--P4--W1.git>.
+Clone the repository: git clone <https://github.com/mugeshi/-Flask-Code-Challenge---Pizza-Restaurants>.
 Activate a virtual environment: pipenv shell.
 Install project dependencies: pipenv install.
 Navigate to the project directory: cd Pizza-Fusion.
 Enter the server directory.
 Run the Flask application using python app.py.
-Testing
+### Testing
 You can test the API endpoints using Postman or any other API testing tool.
 
-Known Bugs
+### Known Bugs
 There are currently no known bugs in this project.
 
-Support and Contact
+### Support and Contact
 For contributions or suggestions, please contact us via email:
 
 Email: nicolemugeshi@gmail.com
 
-License
+### License
 This project is licensed under the Penda Kujua Company.
 THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
