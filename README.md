@@ -146,7 +146,7 @@ There are currently no known bugs in this project.
 Support and Contact
 For contributions or suggestions, please contact us via email:
 
-Email: martin.nyaga@student.moringaschool.com
+Email: nicolemugeshi@gmail.com
 
 License
 This project is licensed under the Penda Kujua Company.
