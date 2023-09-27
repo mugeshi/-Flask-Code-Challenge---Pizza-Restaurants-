@@ -10,7 +10,7 @@ with app.app_context():
 
    
     restaurants_data = [
-        {"name": "Dominion Pizza", "address": "Good Italian, Ngong Road, 5th Avenue"},
+        {"name": "Dominion Pizza", "address": " pizzainn, kimathi road, 5th Avenue"},
         {"name": "Pizza Hut", "address": "Westgate Mall, Mwanzi Road, Nrb 100"},
         {"name": "Restaurant 3", "address": "Address 3"},
         {"name": "Restaurant 4", "address": "Address 4"},
@@ -26,7 +26,7 @@ with app.app_context():
     ]
 
     pizzas_data = [
-        {"name": "Cheese", "ingredients": "Dough, Tomato Sauce, Cheese"},
+        {"name": "Cheese", "ingredients": "Tomato sauce Cheese"},
         {"name": "Pepperoni", "ingredients": "Dough, Tomato Sauce, Cheese, Pepperoni"},
         {"name": "Pizza 3", "ingredients": "Ingredients 3"},
         {"name": "Pizza 4", "ingredients": "Ingredients 4"},

@@ -1,26 +1,50 @@
-Pizza Restaurant API
-Welcome to the Pizza Restaurant API! This API allows you to interact with pizza restaurants and their menus.
+Title: A Flask API for Pizza_Restaurants
 
-Table of Contents
-Installation
-Usage
-Endpoints
-Contributing
-License
-Installation
-Clone this repository to your local machine.
-Install the required dependencies using pip install -r requirements.txt.
-Create a SQLite database named pizza_restaurants.db.
-Run migrations to set up the database tables using flask db upgrade.
-Usage
-To start the Flask server, run python app.py in your terminal. You can then use tools like Postman to make requests to the API.
+Author: Nicole Njeri
 
-Endpoints
-Get All Restaurants
-URL: /restaurants
-Method: GET
-Description: Get a list of all pizza restaurants.
-Sample Response:
+Date: September 22, 2023
+
+Introduction
+Welcome to Pizza Fusion, a unique project that involves building a Flask API for managing Pizza Restaurants. In this assessment, we will delve into the world of pizza establishments and create a robust API that offers a range of functionalities described in the following sections.
+
+Project Overview
+In this project, we aim to create a Flask API that manages Pizza Restaurants and their associated pizzas. The core relationships in our database involve Restaurants having many Pizzas through a junction table called RestaurantPizza, and Pizzas having many Restaurants through the same junction table.
+
+Models and Migrations
+To get started, we'll need to create database models and migrations for the following tables:
+
+Restaurant
+
+id (Primary Key)
+name (String, max length 50, unique)
+address (String)
+Pizza
+
+id (Primary Key)
+name (String)
+ingredients (String)
+RestaurantPizza
+
+id (Primary Key)
+price (Float, between 1 and 30)
+restaurant_id (Foreign Key)
+pizza_id (Foreign Key)
+Validations
+We will apply the following validations to our models:
+
+RestaurantPizza
+
+Price must be between 1 and 30.
+Restaurant
+
+Name must be less than 50 characters.
+Name must be unique.
+API Routes
+We will set up the following API routes, ensuring they return JSON data in the specified format:
+
+GET /restaurants
+
+Return a list of restaurants in the following format:
 json
 Copy code
 [
@@ -35,11 +59,9 @@ Copy code
     "address": "Westgate Mall, Mwanzi Road, Nrb 100"
   }
 ]
-Get Restaurant by ID
-URL: /restaurants/:id
-Method: GET
-Description: Get details of a restaurant by its ID.
-Sample Response (if found):
+GET /restaurants/:id
+
+If the restaurant exists, return its details along with associated pizzas in the following format:
 json
 Copy code
 {
@@ -59,31 +81,15 @@ Copy code
     }
   ]
 }
-Sample Response (if not found):
-json
-Copy code
-{
-  "error": "Restaurant not found"
-}
-Delete Restaurant by ID
-URL: /restaurants/:id
-Method: DELETE
-Description: Delete a restaurant by its ID. Also deletes associated menu items.
-Sample Response (if successful):
-scss
-Copy code
-No content (204)
-Sample Response (if not found):
-json
-Copy code
-{
-  "error": "Restaurant not found"
-}
-Get All Pizzas
-URL: /pizzas
-Method: GET
-Description: Get a list of all available pizzas.
-Sample Response:
+If the restaurant does not exist, return a "Restaurant not found" error with the appropriate HTTP status code.
+DELETE /restaurants/:id
+
+If the restaurant exists, delete it from the database along with associated RestaurantPizzas.
+Return an empty response body with the appropriate HTTP status code.
+If the restaurant does not exist, return a "Restaurant not found" error with the appropriate HTTP status code.
+GET /pizzas
+
+Return a list of pizzas in the following format:
 json
 Copy code
 [
@@ -98,11 +104,10 @@ Copy code
     "ingredients": "Dough, Tomato Sauce, Cheese, Pepperoni"
   }
 ]
-Create Restaurant Pizza
-URL: /restaurant_pizzas
-Method: POST
-Description: Create a new menu item for a restaurant.
-Request Body:
+POST /restaurant_pizzas
+
+Create a new RestaurantPizza associated with an existing Pizza and Restaurant.
+Accept an object with the following properties in the request body:
 json
 Copy code
 {
@@ -110,7 +115,7 @@ Copy code
   "pizza_id": 1,
   "restaurant_id": 3
 }
-Sample Response (if successful):
+If the RestaurantPizza is created successfully, respond with data related to the Pizza:
 json
 Copy code
 {
@@ -118,13 +123,31 @@ Copy code
   "name": "Cheese",
   "ingredients": "Dough, Tomato Sauce, Cheese"
 }
-Sample Response (if validation errors):
-json
-Copy code
-{
-  "errors": ["Validation errors"]
-}
+If the RestaurantPizza creation is not successful due to validation errors, return a "validation errors" message along with the appropriate HTTP status code.
+Technologies Used
+Python 3
+Flask
+SQLAlchemy
+Project Setup
+To get started with the project, follow these steps:
 
+Clone the repository: git clone <https://github.com/MartinNyaga/-Pizza-Restaurants--P4--W1.git>.
+Activate a virtual environment: pipenv shell.
+Install project dependencies: pipenv install.
+Navigate to the project directory: cd Pizza-Fusion.
+Enter the server directory.
+Run the Flask application using python app.py.
+Testing
+You can test the API endpoints using Postman or any other API testing tool.
+
+Known Bugs
+There are currently no known bugs in this project.
+
+Support and Contact
+For contributions or suggestions, please contact us via email:
+
+Email: martin.nyaga@student.moringaschool.com
 
 License
-This project is licensed under the penda kujua License.
+This project is licensed under the Penda Kujua Company.
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
