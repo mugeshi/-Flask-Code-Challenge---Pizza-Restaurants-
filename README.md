@@ -5,7 +5,7 @@
 ### Date: September 22, 2023
 
 ### Introduction
-Welcome to Pizza Fusion, a unique project that involves building a Flask API for managing Pizza Restaurants. In this assessment, we will delve into the world of pizza establishments and create a robust API that offers a range of functionalities described in the following sections.
+Welcome to Pizzainn, a unique project that involves building a Flask API for managing Pizza Restaurants. In this assessment, we will deliver into the world of pizza establishments and create a robust API that offers a range of functionalities described in the following sections.
 
 ### Project Overview
 In this project, we aim to create a Flask API that manages Pizza Restaurants and their associated pizzas. The core relationships in our database involve Restaurants having many Pizzas through a junction table called RestaurantPizza, and Pizzas having many Restaurants through the same junction table.
@@ -50,8 +50,8 @@ Copy code
 [
   {
     "id": 1,
-    "name": "Dominion Pizza",
-    "address": "Good Italian, Ngong Road, 5th Avenue"
+    "name": "pizzainn",
+    "address": "pizzainn,kimathi road, 5th Avenue"
   },
   {
     "id": 2,
@@ -66,8 +66,8 @@ json
 Copy code
 {
   "id": 1,
-  "name": "Dominion Pizza",
-  "address": "Good Italian, Ngong Road, 5th Avenue",
+  "name": " Pizzainn",
+  "address": "pizzainn, kimathi road, 5th Avenue",
   "pizzas": [
     {
       "id": 1,
