@@ -10,8 +10,8 @@ with app.app_context():
 
    
     restaurants_data = [
-        {"name": "Dominion Pizza", "address": " pizzainn, kimathi road, 5th Avenue"},
-        {"name": "Pizza Hut", "address": "Westgate Mall, Mwanzi Road, Nrb 100"},
+        {"name": "pzzainn", "address": " pizzainn, kimathi road, 5th Avenue"},
+        {"name": "Pizzainn", "address": "Westgate Mall, Mwanzi Road, Nrb 100"},
         {"name": "Restaurant 3", "address": "Address 3"},
         {"name": "Restaurant 4", "address": "Address 4"},
         {"name": "Restaurant 5", "address": "Address 5"},
