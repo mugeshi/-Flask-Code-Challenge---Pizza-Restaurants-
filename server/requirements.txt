@@ -12,4 +12,5 @@ MarkupSafe
 SQLAlchemy
 typing_extensions
 Werkzeug
+flask-swagger-ui
 gunicorn
